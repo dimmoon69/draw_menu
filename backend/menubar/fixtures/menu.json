@@ -1,0 +1,18 @@
+[
+{
+    "model": "menubar.menu",
+    "pk": 1,
+    "fields": {
+        "name": "menu1",
+        "slug": "/menu1"
+    }
+},
+{
+    "model": "menubar.menu",
+    "pk": 2,
+    "fields": {
+        "name": "menu2",
+        "slug": "/menu2"
+    }
+}
+]
