@@ -41,7 +41,7 @@ class MenuItem(models.Model):
         obj = self.__class__.objects.filter(name=self.parent).first()
         slug = obj.slug if obj and self.parent is not None else self.menu.slug
         self.slug = f'{slug}/{slugify(self.name)}'
-        super(MenuItem, self).save()
+        super(MenuItem, self).save(*args, **kwargs)
 
     class Meta:
         verbose_name = 'Пункт меню'

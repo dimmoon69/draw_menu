@@ -13,7 +13,7 @@ def draw_menu(context: RequestContext, menu_name: str) -> dict:
 
     if elements and menu_name in elements:
         menu_items = MenuItem.objects.select_related(
-            'menu', 'parent__menu'
+            'menu', 'parent'
         ).filter(menu__name=menu_name)
 
         new_menu_items = []

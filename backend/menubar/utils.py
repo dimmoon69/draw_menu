@@ -19,6 +19,8 @@ def path_element(request):
 
 
 class NodeMenu:
+    __slots__ = 'children', 'item', 'item_slug', 'objects', 'roots'
+
     def __init__(self, children=None, item=None, item_slug=None):
         self.objects = {}
         self.roots = []
@@ -52,6 +54,8 @@ class NodeMenu:
 
 
 class NodeMenuHtmlRender:
+    __slots__ = 'html_result', 'roots'
+
     def __init__(self, roots):
         self.html_result = None
         self.roots = roots
@@ -68,6 +72,6 @@ class NodeMenuHtmlRender:
         if len(root.children) > 0:
             self.html_result += "<ul>"
             for node in root.children:
-                self.tree_recursion(node, level+1)
+                self.tree_recursion(node, level + 1)
             self.html_result += "</ul>"
         self.html_result += "</li>"
